@@ -3,6 +3,8 @@
 ---
 ## 后端
 请将js中所有包含127.0.0.1的IP替换为自己的服务器地址，若配置ssl加密请自行将链接改成https。  
+index中使用了[一言api](https://github.com/hitokoto-osc/hitokoto-api)，这是我自己部署的，但是不想泄露自己的域名就换成了官方的url。开源项目，请支持原作者。  
+目前只提供docker部署示例
 部署步骤
 ```bash
 #先将reading-app-serve文件夹压缩起来然后发送到服务器（scp之类的方法都可以）
