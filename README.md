@@ -12,7 +12,8 @@ cd reading-app-serve
 #然后使用docker-compose部署（如果报错请使用docker compose,取决于你安装的什么）
 docker-compose up -d --build
 ```
-如果有部分安装失败多半是网络问题，请链接国际互联网重试
+如果有部分安装失败多半是网络问题，请链接国际互联网重试  
+
 ---
 ## Last
 欢迎提交 Issues 和 Pull requests
