@@ -19,7 +19,7 @@ Page({
 
     //获取一言
     wx.request({
-        url: 'https://api.molirain.vip/?encode=json',
+        url: 'https://v1.hitokoto.cn//?encode=json',
         success: (res) => {
           this.setData({
             hitokoto: res.data.hitokoto
