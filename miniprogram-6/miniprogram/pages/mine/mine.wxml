@@ -1,0 +1,73 @@
+<view class="container">
+  <view class="user-info-section card">
+    <view class="user-avatar">👤</view>
+    <view class="user-name">阅读用户</view>
+  </view>
+  
+  <!-- 加载中提示 -->
+  <view class="loading" wx:if="{{loading}}">加载中...</view>
+  
+  <!-- 我的书架 -->
+  <view class="section-title">我的书架</view>
+  <view class="book-section card">
+    <view class="empty-tip" wx:if="{{!loading && (!favorites || favorites.length === 0)}}">
+      还没有收藏书籍，快去收藏吧！
+    </view>
+    <view class="book-list" wx:if="{{favorites && favorites.length > 0}}">
+      <view class="book-item" wx:for="{{favorites}}" wx:key="_id" bindtap="goToDetail" data-id="{{item._id}}">
+        <view class="book-cover">
+          <text class="book-icon">📚</text>
+        </view>
+        <view class="book-info">
+          <view class="book-title">{{item.title}}</view>
+          <view class="book-author">{{item.author || '佚名'}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 最近阅读 -->
+  <view class="section-title">最近阅读</view>
+  <view class="book-section card">
+    <view class="empty-tip" wx:if="{{!loading && (!history || history.length === 0)}}">
+      还没有阅读记录，去发现好书吧！
+    </view>
+    <view class="book-list" wx:if="{{history && history.length > 0}}">
+      <view class="book-item" wx:for="{{history}}" wx:key="index" bindtap="goToReader" data-id="{{item.bookId._id}}">
+        <view class="book-cover">
+          <text class="book-icon">📖</text>
+        </view>
+        <view class="book-info">
+          <view class="book-title">{{item.bookId.title}}</view>
+          <view class="book-progress">
+            进度: {{item.progressPercent}}%
+          </view>
+          <view class="book-time">
+            上次阅读: {{item.lastReadAtDisplay}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 我的上传 -->
+  <view class="section-title">我的上传</view>
+  <view class="book-section card">
+    <view class="empty-tip" wx:if="{{!loading && (!myUploads || myUploads.length === 0)}}">
+      还没有上传书籍，点击下方按钮上传吧！
+    </view>
+    <view class="book-list" wx:if="{{myUploads && myUploads.length > 0}}">
+      <view class="book-item" wx:for="{{myUploads}}" wx:key="_id" bindtap="goToDetail" data-id="{{item._id}}">
+        <view class="book-cover">
+          <text class="book-icon">📤</text>
+        </view>
+        <view class="book-info">
+          <view class="book-title">{{item.title}}</view>
+          <view class="book-downloads">下载: {{item.downloads || 0}}次</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <button class="upload-btn" bindtap="goToUpload">上传新书籍</button>
+</view>

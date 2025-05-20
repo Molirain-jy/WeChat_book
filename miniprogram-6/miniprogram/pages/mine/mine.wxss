@@ -1,0 +1,108 @@
+.container {
+    padding-bottom: 120rpx;
+  }
+  
+  .user-info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40rpx;
+    margin-bottom: 30rpx;
+  }
+  
+  .user-avatar {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80rpx;
+    margin-bottom: 20rpx;
+  }
+  
+  .user-name {
+    font-size: 34rpx;
+    font-weight: bold;
+  }
+  
+  .section-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin: 30rpx 0 20rpx 30rpx;
+  }
+  
+  .book-section {
+    padding: 20rpx;
+    margin-bottom: 30rpx;
+  }
+  
+  .empty-tip {
+    text-align: center;
+    padding: 40rpx;
+    color: #999;
+    font-size: 28rpx;
+  }
+  
+  .book-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .book-item {
+    display: flex;
+    padding: 20rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+  }
+  
+  .book-item:last-child {
+    border-bottom: none;
+  }
+  
+  .book-cover {
+    width: 100rpx;
+    height: 140rpx;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8rpx;
+    margin-right: 20rpx;
+  }
+  
+  .book-icon {
+    font-size: 50rpx;
+  }
+  
+  .book-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .book-title {
+    font-size: 30rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+  }
+  
+  .book-author, .book-progress, .book-time, .book-downloads {
+    font-size: 24rpx;
+    color: #999;
+    margin-bottom: 10rpx;
+  }
+  
+  .upload-btn {
+    position: fixed;
+    bottom: 30rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background-color: #3963bc;
+    color: white;
+    font-size: 32rpx;
+    border-radius: 48rpx;
+    padding: 20rpx 0;
+  }

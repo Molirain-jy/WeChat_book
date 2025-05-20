@@ -1,0 +1,38 @@
+<!-- 导航栏 -->
+<view class="nav-bar">
+  <text class="title">我的收藏（{{total}}）</text>
+  <view class="sort-box">
+    <text wx:for="{{sortOptions}}" 
+          wx:key="index"
+          class="sort-item {{activeSort === item.value ? 'active' : ''}}"
+          bindtap="handleSort"
+          data-value="{{item.value}}">
+      {{item.label}}
+    </text>
+  </view>
+</view>
+
+<!-- 书籍列表 -->
+<scroll-view class="book-list" scroll-y>
+  <block wx:for="{{bookList}}" wx:key="_id">
+    <view class="book-item">
+      <image class="cover" src="{{item.cover || '/images/default-cover.png'}}"></image>
+      <view class="info">
+        <text class="title">{{item.title}}</text>
+        <text class="author">{{item.author || '未知作者'}}</text>
+        <text class="progress">已读 {{item.progress}}%</text>
+      </view>
+      <view class="actions">
+        <button class="btn-favorite {{item.isFavorite ? 'active' : ''}}" 
+                bindtap="toggleFavorite"
+                data-id="{{item._id}}">
+          ♥
+        </button>
+      </view>
+    </view>
+  </block>
+  
+  <!-- 加载状态 -->
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+  <view wx:if="{{noMore}}" class="no-more">没有更多了~</view>
+</scroll-view>

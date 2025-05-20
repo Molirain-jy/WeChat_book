@@ -1,0 +1,104 @@
+.upload-card {
+    padding: 30rpx;
+  }
+  
+  .upload-title {
+    font-size: 36rpx;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40rpx;
+  }
+  
+  .file-section {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 12rpx;
+    padding: 40rpx;
+    margin-bottom: 40rpx;
+  }
+  
+  .file-section.has-file {
+    background-color: rgba(57, 99, 188, 0.1);
+  }
+  
+  .file-icon {
+    width: 100rpx;
+    height: 100rpx;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60rpx;
+    margin-right: 30rpx;
+  }
+  
+  .file-text {
+    flex: 1;
+  }
+  
+  .file-name {
+    font-weight: bold;
+    font-size: 30rpx;
+    margin-bottom: 10rpx;
+    word-break: break-all;
+  }
+  
+  .file-tip, .file-size {
+    font-size: 24rpx;
+    color: #999;
+  }
+  
+  .form-section {
+    margin-bottom: 40rpx;
+  }
+  
+  .form-item {
+    margin-bottom: 30rpx;
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 28rpx;
+    font-weight: bold;
+    margin-bottom: 16rpx;
+  }
+  
+  .form-input, .form-textarea {
+    width: 100%;
+    min-height: 80rpx;
+    padding: 20rpx;
+    border: 1rpx solid #ddd;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    box-sizing: border-box;
+  }
+  
+  .form-textarea {
+    height: 200rpx;
+  }
+  
+  .upload-btn {
+    margin-bottom: 40rpx;
+    padding: 20rpx 0;
+    font-size: 32rpx;
+  }
+  
+  .upload-tips {
+    border-top: 1rpx solid #eee;
+    padding-top: 30rpx;
+  }
+  
+  .tip-title {
+    font-weight: bold;
+    margin-bottom: 16rpx;
+    font-size: 28rpx;
+  }
+  
+  .tip-item {
+    font-size: 26rpx;
+    color: #666;
+    margin-bottom: 10rpx;
+  }

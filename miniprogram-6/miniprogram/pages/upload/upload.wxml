@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="upload-card card">
+    <view class="upload-title">上传书籍</view>
+    
+    <view class="file-section {{filePath ? 'has-file' : ''}}" bindtap="chooseFile">
+      <view class="file-icon">{{filePath ? '📄' : '➕'}}</view>
+      <view class="file-text">
+        <block wx:if="{{filePath}}">
+          <view class="file-name">已选择: {{fileName}}</view>
+          <view class="file-size">大小: {{fileSizeDisplay}}</view>
+        </block>
+        <block wx:else>
+          <view>点击选择TXT文件</view>
+          <view class="file-tip">支持从聊天记录中选择文件</view>
+        </block>
+      </view>
+    </view>
+    
+    <view class="form-section">
+      <view class="form-item">
+        <text class="form-label">书名</text>
+        <input class="form-input" value="{{title}}" data-field="title" bindinput="onInput" placeholder="请输入书名" maxlength="50"/>
+      </view>
+      
+      <view class="form-item">
+        <text class="form-label">作者</text>
+        <input class="form-input" value="{{author}}" data-field="author" bindinput="onInput" placeholder="请输入作者名 (选填)" maxlength="30"/>
+      </view>
+      
+      <view class="form-item">
+        <text class="form-label">简介</text>
+        <textarea class="form-textarea" value="{{description}}" data-field="description" bindinput="onInput" placeholder="请输入简介 (选填)" maxlength="500"/>
+      </view>
+    </view>
+    
+    <button class="upload-btn btn-primary" disabled="{{!filePath || !title || uploading}}" bindtap="uploadBook">
+      {{uploading ? '上传中...' : '上传书籍'}}
+    </button>
+    
+    <view class="upload-tips">
+      <view class="tip-title">上传须知:</view>
+      <view class="tip-item">• 仅支持TXT格式文件</view>
+      <view class="tip-item">• 文件大小不超过10MB</view>
+      <view class="tip-item">• 请确保您拥有该文件的分享权利</view>
+    </view>
+  </view>
+</view>

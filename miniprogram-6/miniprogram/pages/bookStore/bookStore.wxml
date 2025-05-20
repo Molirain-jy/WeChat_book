@@ -1,0 +1,56 @@
+<view class="container">
+  <!-- 顶部搜索栏 -->
+  <view class="search-container">
+    <view class="search-bar">
+      <view class="search-icon">🔍</view>
+      <input class="search-input" placeholder="搜索书城书籍" bindinput="onSearchInput" value="{{searchKey}}" />
+      <view class="search-clear" bindtap="clearSearch" wx:if="{{searchKey}}">✖</view>
+    </view>
+  </view>
+
+  <!-- 分类栏 -->
+  <scroll-view class="category-scroll" scroll-x="true" enhanced="true" show-scrollbar="false">
+    <view class="category-list">
+      <view 
+        wx:for="{{categories}}" 
+        wx:key="index" 
+        class="category-item {{currentCategory === item ? 'active' : ''}}" 
+        bindtap="selectCategory" 
+        data-category="{{item}}">
+        {{item}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 加载中提示 -->
+  <view class="loading" wx:if="{{loading}}">
+    <view class="loading-icon"></view>
+    <view class="loading-text">加载中...</view>
+  </view>
+
+  <!-- 无数据提示 -->
+  <view class="empty-tip" wx:if="{{!loading && filteredBooks.length === 0}}">
+    <image class="empty-image" src="/images/icons/book_black.png" mode="aspectFit"></image>
+    <view class="empty-text">暂无相关书籍</view>
+  </view>
+
+  <!-- 书籍列表 -->
+  <view class="book-grid" wx:if="{{!loading && filteredBooks.length > 0}}">
+    <view class="book-item" wx:for="{{filteredBooks}}" wx:key="_id" bindtap="goToDetail" data-id="{{item._id}}">
+      <view class="book-cover">
+        <image wx:if="{{item.coverUrl}}" src="{{item.coverUrl}}" mode="aspectFill" />
+        <view wx:else class="book-cover-placeholder">
+          <text class="book-emoji">📚</text>
+        </view>
+        <view class="book-downloads">{{item.downloads || 0}}次</view>
+      </view>
+      <view class="book-title">{{item.title}}</view>
+      <view class="book-author">{{item.author || '佚名'}}</view>
+    </view>
+  </view>
+
+  <!-- 回到顶部按钮 -->
+  <view class="back-to-top" bindtap="scrollToTop" wx:if="{{showBackToTop}}">
+    <text class="back-to-top-icon">⬆️</text>
+  </view>
+</view>

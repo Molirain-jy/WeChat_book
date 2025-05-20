@@ -1,0 +1,51 @@
+<view class="reader-container" style="background-color: {{theme === 'dark' ? '#222' : '#f9f9e8'}};">
+  <view class="reader-content" 
+        style="font-size: {{fontSize}}px; color: {{theme === 'dark' ? '#e0e0e0' : '#333'}};">
+    <!-- 加载中 -->
+    <view class="loading" wx:if="{{loading}}" style="color: {{theme === 'dark' ? '#e0e0e0' : '#333'}};">
+      加载中...
+    </view>
+    
+    <!-- 书籍内容 -->
+    <view wx:else>
+      <view class="book-title">{{bookTitle}}</view>
+      <view class="content-text">{{content}}</view>
+    </view>
+  </view>
+  
+  <!-- 底部工具栏 -->
+  <view class="reader-toolbar" style="background-color: {{theme === 'dark' ? '#333' : '#f0f0f0'}};">
+    <view class="toolbar-btn" bindtap="prevPage">上一页</view>
+    <view class="progress-info">
+      {{progressPercent}}%
+    </view>
+    <view class="toolbar-btn" bindtap="nextPage">下一页</view>
+  </view>
+  
+  <!-- 设置面板 -->
+  <view class="settings-btn" bindtap="toggleSettings">⚙️</view>
+  <view class="settings-panel {{showSettings ? 'show' : ''}}" 
+        style="background-color: {{theme === 'dark' ? '#333' : '#fff'}};">
+    <view class="settings-title" style="color: {{theme === 'dark' ? '#e0e0e0' : '#333'}};">阅读设置</view>
+    
+    <view class="settings-item">
+      <text style="color: {{theme === 'dark' ? '#e0e0e0' : '#333'}};">字体大小</text>
+      <view class="font-size-control">
+        <view class="font-btn" bindtap="decreaseFont">A-</view>
+        <text class="font-size-value" style="color: {{theme === 'dark' ? '#e0e0e0' : '#333'}};">{{fontSize}}</text>
+        <view class="font-btn" bindtap="increaseFont">A+</view>
+      </view>
+    </view>
+    
+    <view class="settings-item">
+      <text style="color: {{theme === 'dark' ? '#e0e0e0' : '#333'}};">主题选择</text>
+      <view class="theme-control">
+        <view class="theme-btn {{theme === 'light' ? 'active' : ''}}" bindtap="selectTheme" data-theme="light">浅色</view>
+        <view class="theme-btn {{theme === 'sepia' ? 'active' : ''}}" bindtap="selectTheme" data-theme="sepia">护眼</view>
+        <view class="theme-btn {{theme === 'dark' ? 'active' : ''}}" bindtap="selectTheme" data-theme="dark">暗黑</view>
+      </view>
+    </view>
+    
+    <view class="close-settings" bindtap="toggleSettings">关闭</view>
+  </view>
+</view>

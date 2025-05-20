@@ -1,0 +1,53 @@
+<view class="container">
+  <!-- 加载中提示 -->
+  <view class="loading" wx:if="{{loading}}">加载中...</view>
+
+  <!-- 书籍信息 -->
+  <view class="book-info card" wx:if="{{book && !loading}}">
+    <!-- 官方书籍有封面的情况 -->
+    <view class="book-header flex-row">
+      <view class="book-cover">
+        <image wx:if="{{book.isOfficial && book.coverUrl}}" src="{{book.coverUrl}}" mode="aspectFill" />
+        <text wx:else class="book-icon">📚</text>
+      </view>
+      <view class="book-meta">
+        <view class="book-title">{{book.title}}</view>
+        <view class="book-author">作者: {{book.author || '佚名'}}</view>
+        <view class="book-size">文件大小: {{fileSizeDisplay}}</view>
+        <view class="book-time">上传时间: {{timeDisplay}}</view>
+        <view class="book-downloads">下载次数: {{book.downloads || 0}}</view>
+        <!-- 显示官方标记 -->
+        <view class="book-official" wx:if="{{book.isOfficial}}">官方书籍</view>
+      </view>
+    </view>
+    
+    <view class="book-description" wx:if="{{book.description}}">
+      <view class="section-title">简介</view>
+      <text>{{book.description}}</text>
+    </view>
+
+    <view class="action-buttons flex-row">
+      <button class="action-btn read-btn" bindtap="startReading">开始阅读</button>
+      <button class="action-btn fav-btn {{isFavorite ? 'active' : ''}}" bindtap="toggleFavorite">
+        {{isFavorite ? '已收藏' : '收藏'}}
+      </button>
+      <button class="action-btn download-btn" bindtap="downloadBook">下载</button>
+      
+      <!-- 删除按钮（仅用户上传书籍且为上传者可见） -->
+      <button class="action-btn delete-btn" 
+              wx:if="{{!book.isOfficial && book.uploadedBy === userId}}" 
+              bindtap="showDeleteConfirm">
+        删除
+      </button>
+    </view>
+  </view>
+  
+  <!-- 提示内容 -->
+  <view class="tips card" wx:if="{{book && !loading}}">
+    <view class="section-title">阅读提示</view>
+    <view class="tip-item">• 点击"开始阅读"进入阅读模式</view>
+    <view class="tip-item">• 阅读过程中可调整字体大小</view>
+    <view class="tip-item">• 阅读进度将自动保存</view>
+    <view class="tip-item">• 收藏后可在"我的-我的书架"中快速访问</view>
+  </view>
+</view>

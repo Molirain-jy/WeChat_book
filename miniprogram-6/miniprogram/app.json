@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bookDetail/bookDetail",
+    "pages/reader/reader",
+    "pages/mine/mine",
+    "pages/upload/upload",
+    "pages/bookStore/bookStore"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarTitleText": "阅读小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#3963bc",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "书架",
+        "iconPath": "images/icons/book_white.png",
+        "selectedIconPath": "images/icons/book_black.png"
+      },
+      {
+        "pagePath": "pages/bookStore/bookStore", 
+        "text": "书城",
+        "iconPath": "images/icons/book_white.png",
+        "selectedIconPath": "images/icons/book_white.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/icons/meh_white.png",
+        "selectedIconPath": "images/icons/meh_black.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

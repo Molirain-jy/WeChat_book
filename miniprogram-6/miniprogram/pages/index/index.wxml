@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="yiyan"><text>{{hitokoto}}</text></view>
+  <view class="yiyan"><text>{{hitokoto0}}</text></view>
+  <view class="header">
+    <view class="search-box flex-row">
+      <input class="search-input" placeholder="搜索书籍" bindinput="onSearchInput" value="{{searchKey}}" />
+      <text class="search-icon" wx:if="{{!searchKey}}">🔍</text>
+      <text class="clear-icon" bindtap="clearSearch" wx:if="{{searchKey}}">✖</text>
+    </view>
+    <view class="upload-btn" bindtap="goToUpload">上传书籍</view>
+  </view>
+
+  <!-- 加载中提示 -->
+  <view class="loading" wx:if="{{loading}}">加载中...</view>
+
+  <!-- 无数据提示 -->
+  <view class="empty-tip" wx:if="{{!loading && filteredBooks.length === 0}}">
+    <view>暂无书籍</view>
+    <view style="margin-top: 20rpx;">
+      <button bindtap="goToUpload" class="btn-primary" style="width: 260rpx; font-size: 28rpx;">上传新书籍</button>
+    </view>
+  </view>
+
+  <!-- 书籍列表 -->
+  <view class="book-list" wx:if="{{filteredBooks.length > 0}}">
+    <view class="book-item card" wx:for="{{filteredBooks}}" wx:key="_id" bindtap="goToDetail" data-id="{{item._id}}">
+      <view class="book-cover">
+        <text class="book-icon">📚</text>
+      </view>
+      <view class="book-info">
+        <view class="book-title">{{item.title}}</view>
+        <view class="book-author">{{item.author || '佚名'}}</view>
+        <view class="book-meta flex-row">
+          <text class="book-size">{{item.fileSizeDisplay}}</text>
+          <text class="book-time">{{item.timeDisplay}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

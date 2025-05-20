@@ -1,0 +1,143 @@
+.book-info {
+    margin-bottom: 30rpx;
+  }
+  
+  .book-header {
+    margin-bottom: 30rpx;
+  }
+  
+  .book-cover {
+    width: 180rpx;
+    height: 240rpx;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12rpx;
+    margin-right: 30rpx;
+  }
+  
+  .book-icon {
+    font-size: 80rpx;
+  }
+  
+  .book-meta {
+    flex: 1;
+  }
+  
+  .book-title {
+    font-size: 36rpx;
+    font-weight: bold;
+    margin-bottom: 12rpx;
+  }
+  
+  .book-author {
+    font-size: 28rpx;
+    color: #666;
+    margin-bottom: 8rpx;
+  }
+  
+  .book-size, .book-time, .book-downloads {
+    font-size: 24rpx;
+    color: #999;
+    margin-bottom: 6rpx;
+  }
+  
+  .section-title {
+    font-size: 30rpx;
+    font-weight: bold;
+    margin-bottom: 16rpx;
+    padding-left: 20rpx;
+    border-left: 8rpx solid #3963bc;
+  }
+  
+  .book-description {
+    margin-bottom: 30rpx;
+    color: #666;
+    font-size: 28rpx;
+    line-height: 1.6;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .action-btn {
+    flex: 1;
+    margin: 0 10rpx;
+    padding: 16rpx 0;
+    font-size: 28rpx;
+    border-radius: 8rpx;
+  }
+  
+  .action-btn:first-child {
+    margin-left: 0;
+  }
+  
+  .action-btn:last-child {
+    margin-right: 0;
+  }
+  
+  .read-btn {
+    background: #3963bc;
+    color: white;
+  }
+  
+  .fav-btn {
+    background: #f0f0f0;
+    color: #666;
+  }
+  
+  .fav-btn.active {
+    background: #f8d46a;
+    color: #854c00;
+  }
+  
+  .download-btn {
+    background: #42b983;
+    color: white;
+  }
+  
+  .delete-btn {
+    background: #e74c3c;
+    color: white;
+  }
+  
+  .tips {
+    font-size: 28rpx;
+  }
+  
+  .tip-item {
+    margin-bottom: 12rpx;
+    color: #666;
+  }
+
+  /* 添加官方标记样式 */
+.book-official {
+    display: inline-block;
+    font-size: 22rpx;
+    color: rgb(255, 255, 255);
+    background-color: #ff9800;
+    padding: 4rpx 12rpx;
+    border-radius: 4rpx;
+    margin-top: 10rpx;
+  }
+  
+  .book-cover {
+    width: 180rpx;
+    height: 240rpx;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12rpx;
+    margin-right: 30rpx;
+    overflow: hidden;
+  }
+  
+  .book-cover image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

@@ -1,0 +1,119 @@
+.container {
+    padding-bottom: 30rpx;
+  }
+  
+  .yiyan {
+    padding: 30rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #444;
+    font-style: italic;
+    line-height: 1.0;
+  }
+  
+  .yiyan::before {
+    content: "❝ ";
+    font-size: 40rpx;
+    color: #aaa;
+    vertical-align: top;
+  }
+  
+  .yiyan::after {
+    content: "❞";
+    font-size: 40rpx;
+    color: #aaa;
+    vertical-align: bottom;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30rpx;
+  }
+  
+  .search-box {
+    position: relative;
+    flex: 1;
+    margin-right: 20rpx;
+  }
+  
+  .search-input {
+    background: #fff;
+    border-radius: 32rpx;
+    height: 70rpx;
+    padding: 0 70rpx 0 30rpx;
+    font-size: 28rpx;
+    width: 100%;
+  }
+  
+  .search-icon, .clear-icon {
+    position: absolute;
+    right: 30rpx;
+    color: #999;
+  }
+  
+  .upload-btn {
+    background: #3963bc;
+    color: #fff;
+    padding: 12rpx 24rpx;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+  }
+  
+  .book-list {
+    padding-top: 10rpx;
+  }
+  
+  .book-item {
+    display: flex;
+    padding: 24rpx;
+    margin-bottom: 20rpx;
+  }
+  
+  .book-cover {
+    width: 120rpx;
+    height: 160rpx;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8rpx;
+    margin-right: 24rpx;
+  }
+  
+  .book-icon {
+    font-size: 60rpx;
+  }
+  
+  .book-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 160rpx;
+  }
+  
+  .book-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 8rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .book-author {
+    font-size: 28rpx;
+    color: #666;
+    margin-bottom: 16rpx;
+  }
+  
+  .book-meta {
+    font-size: 24rpx;
+    color: #999;
+  }
+  
+  .book-size {
+    margin-right: 24rpx;
+  }

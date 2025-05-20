@@ -1,0 +1,101 @@
+/* 导航栏 */
+.nav-bar {
+    padding: 20rpx;
+    background: #fff;
+    border-bottom: 1rpx solid #eee;
+  }
+  
+  .title {
+    font-size: 36rpx;
+    font-weight: bold;
+  }
+  
+  .sort-box {
+    display: flex;
+    margin-top: 20rpx;
+  }
+  
+  .sort-item {
+    padding: 10rpx 20rpx;
+    margin-right: 20rpx;
+    border-radius: 8rpx;
+    border: 1rpx solid #ddd;
+  }
+  
+  .sort-item.active {
+    background: #ff4444;
+    color: white;
+    border-color: #ff4444;
+  }
+  
+  /* 书籍列表 */
+  .book-list {
+    height: calc(100vh - 160rpx);
+    padding: 20rpx;
+  }
+  
+  .book-item {
+    display: flex;
+    padding: 20rpx;
+    margin-bottom: 20rpx;
+    background: #fff;
+    border-radius: 12rpx;
+    box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.1);
+  }
+  
+  .cover {
+    width: 160rpx;
+    height: 220rpx;
+    margin-right: 20rpx;
+    border-radius: 8rpx;
+  }
+  
+  .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    font-size: 32rpx;
+    margin-bottom: 10rpx;
+  }
+  
+  .author {
+    color: #666;
+    font-size: 24rpx;
+    margin-bottom: 15rpx;
+  }
+  
+  .progress {
+    color: #ff4444;
+    font-size: 26rpx;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-favorite {
+    width: 80rpx;
+    height: 80rpx;
+    border: none;
+    background: #eee;
+    border-radius: 50%;
+    font-size: 40rpx;
+    line-height: 80rpx;
+  }
+  
+  .btn-favorite.active {
+    background: #ff4444;
+    color: white;
+  }
+  
+  /* 加载状态 */
+  .loading, .no-more {
+    text-align: center;
+    padding: 20rpx;
+    color: #999;
+  }
+  
