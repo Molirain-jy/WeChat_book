@@ -18,7 +18,7 @@ docker-compose up -d --build
 docker exec -it reading-app-server-app-1 sh
 cd /app
 node scripts/add-official-books.js
-update-book-flags.js
+node update-book-flags.js
 ```
 如果有部分安装失败多半是网络问题，请链接国际互联网重试  
 
