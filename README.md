@@ -13,6 +13,12 @@ cd reading-app-serve
 
 #然后使用docker-compose部署（如果报错请使用docker compose,取决于你安装的什么）
 docker-compose up -d --build
+
+#提供了一个一键加入官方书籍的脚本，可以进入容器并运行，脚本可根据需要修改，在部署项目之前先修改好
+docker exec -it reading-app-server-app-1 sh
+cd /app
+node scripts/add-official-books.js
+update-book-flags.js
 ```
 如果有部分安装失败多半是网络问题，请链接国际互联网重试  
 
